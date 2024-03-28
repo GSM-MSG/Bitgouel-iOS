@@ -10,6 +10,7 @@ final class LectureListViewModel: BaseViewModel {
     @Published var selectedLectureID: String?
     @Published var isPresentedLectureDetailView: Bool = false
     @Published var type: LectureType?
+    @Published var isShowingLoginAlert: Bool = false
 
     private let loadUserAuthorityUseCase: any LoadUserAuthorityUseCase
     private let lectureListDetailFactory: any LectureListDetailFactory
@@ -44,6 +45,11 @@ final class LectureListViewModel: BaseViewModel {
 
     func updateSelectedLectureID(lectureID: String) {
         self.selectedLectureID = lectureID
+    }
+
+    @MainActor
+    func isShowingLoginAlertDismissed() {
+        isShowingLoginAlert = false
     }
 
     @MainActor
