@@ -1,10 +1,10 @@
+import EnvironmentPlugin
 import ProjectDescription
 
 let workspace = Workspace(
-    name: "Bitgouel",
+    name: env.name,
     projects: [
-        "App",
-        "Service"
+        "Projects/App"
     ],
     fileHeaderTemplate: nil,
     additionalFiles: []
