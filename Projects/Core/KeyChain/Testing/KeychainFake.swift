@@ -1,4 +1,5 @@
 import Foundation
+import KeychainInterface
 
 final class KeychainFake: Keychain {
     var store: [String: String] = [:]

@@ -12,7 +12,7 @@ public struct LinkDetailSettingView: View {
         dismiss: DismissAction,
         applyButtonTapAction: @escaping ([String]) -> Void
     ) {
-        self.links = links
+        _links = State(initialValue: links)
         self.link = link
         self.dismiss = dismiss
         self.applyButtonTapAction = applyButtonTapAction
