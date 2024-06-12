@@ -1,5 +1,6 @@
 import Foundation
 import Moya
+import BaseDomainInterface
 
 public protocol BitgouelAPI: TargetType, JwtAuthorizable {
     associatedtype ErrorType: Error
@@ -45,10 +46,4 @@ extension BitgouelDomain {
     var asURLString: String {
         "/\(self.rawValue)"
     }
-}
-
-private final class BundleFinder {}
-
-private extension Foundation.Bundle {
-    static let module = Bundle(for: BundleFinder.self)
 }

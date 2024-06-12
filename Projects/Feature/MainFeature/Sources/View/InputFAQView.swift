@@ -40,14 +40,7 @@ struct InputFAQView: View {
                         Text("Q.")
                             .bitgouelFont(.text3, color: .primary(.p5))
 
-                        TextEditor(
-                            text: Binding(
-                                get: { question },
-                                set: { newQuestion in
-                                    question = newQuestion
-                                }
-                            )
-                        )
+                        TextEditor(text: $question)
                         .overlay {
                             if question.isEmpty {
                                 HStack {
@@ -68,14 +61,7 @@ struct InputFAQView: View {
                         Text("A.")
                             .bitgouelFont(.text3, color: .primary(.p5))
 
-                        TextEditor(
-                            text: Binding(
-                                get: { answer },
-                                set: { newAnswer in
-                                    answer = newAnswer
-                                }
-                            )
-                        )
+                        TextEditor(text: $answer)
                         .overlay {
                             if answer.isEmpty {
                                 HStack {
@@ -106,6 +92,8 @@ struct InputFAQView: View {
 
                         Button {
                             inputFAQAction(question, answer)
+                            question = ""
+                            answer = ""
                         } label: {
                             Text("작성")
                                 .bitgouelFont(.text3, color: .primary(.p5))

@@ -11,7 +11,7 @@ public struct NoInfoView: View {
 
     public var body: some View {
         VStack {
-            BitgouelIcon(.emptyBox)
+            BitgouelIcon(.emptyBox, width: 72, height: 72)
 
             Text(text)
                 .bitgouelFont(.text3, color: .greyscale(.g4))

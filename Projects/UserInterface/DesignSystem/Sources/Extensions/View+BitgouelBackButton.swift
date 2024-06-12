@@ -21,8 +21,9 @@ struct BitgouelBackButtonModifier: ViewModifier {
                         willDismiss()
                         dismiss()
                     } label: {
-                        BitgouelIcon(.chevronLeft)
+                        BitgouelIcon(.chevronLeft, width: 11, height: 22)
                             .foregroundColor(.bitgouel(.primary(.p5)))
+                            .aspectRatio(contentMode: .fit)
 
                         Text("돌아가기")
                             .foregroundColor(.bitgouel(.primary(.p5)))
