@@ -21,7 +21,7 @@ let project = Project.module(
             spec: .init(
                 infoPlist: .extendingDefault(
                     with: [
-                        "BASE_URL": .string("$(BASE_URL)")
+                        "BASE_URL": "$(BASE_URL)"
                     ]
                 ),
                 dependencies: [

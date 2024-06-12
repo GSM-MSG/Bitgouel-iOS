@@ -8,22 +8,20 @@ public protocol BitgouelAPI: TargetType, JwtAuthorizable {
     var errorMap: [Int: ErrorType] { get }
 }
 
-public extension BitgouelAPI {
-    var baseURL: URL {
-        URL(
-            string: Bundle.module.object(forInfoDictionaryKey: "BASE_URL") as? String ?? ""
-        ) ?? URL(string: "https://www.google.com")!
+extension BitgouelAPI {
+    public var baseURL: URL {
+        URL(string: Bundle.module.object(forInfoDictionaryKey: "BASE_URL") as? String ?? "") ?? URL(string: "base")!
     }
 
-    var path: String {
+    public var path: String {
         domain.asURLString + urlPath
     }
 
-    var headers: [String: String]? {
+    public var headers: [String: String]? {
         ["Content-Type": "application/json"]
     }
 
-    var validationType: ValidationType {
+    public var validationType: ValidationType {
         return .successCodes
     }
 }
@@ -49,8 +47,8 @@ extension BitgouelDomain {
     }
 }
 
-private class BundleFinder {}
+private final class BundleFinder {}
 
-extension Foundation.Bundle {
+private extension Foundation.Bundle {
     static let module = Bundle(for: BundleFinder.self)
 }

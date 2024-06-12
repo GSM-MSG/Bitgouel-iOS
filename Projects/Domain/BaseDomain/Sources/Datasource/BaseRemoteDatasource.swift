@@ -2,7 +2,6 @@ import DateUtil
 import Foundation
 import KeychainInterface
 import Moya
-import BaseDomainInterface
 
 open class BaseRemoteDataSource<API: BitgouelAPI> {
     private let keychain: any Keychain
