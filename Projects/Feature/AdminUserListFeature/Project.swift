@@ -10,7 +10,10 @@ let project = Project.module(
         ]),
         .implements(module: .feature(.AdminUserListFeature), dependencies: [
             .feature(target: .AdminUserListFeature, type: .interface),
-            .feature(target: .BaseFeature)
+            .feature(target: .AdminRequestUserSignupFeature, type: .interface),
+            .feature(target: .AdminWithdrawUserListFeature, type: .interface),
+            .feature(target: .BaseFeature),
+            .domain(target: .AdminDomain, type: .interface)
         ]),
         .tests(module: .feature(.AdminUserListFeature), dependencies: [
             .feature(target: .AdminUserListFeature)

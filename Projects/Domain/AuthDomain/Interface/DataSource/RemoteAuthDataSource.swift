@@ -1,7 +1,4 @@
-import KeychainInterface
-
 public protocol RemoteAuthDataSource {
-    var keychain: Keychain { get }
     func login(req: LoginRequestDTO) async throws -> UserLoginEntity
     func reissueToken() async throws
     func logout(accessToken: String, refreshToken: String) async throws

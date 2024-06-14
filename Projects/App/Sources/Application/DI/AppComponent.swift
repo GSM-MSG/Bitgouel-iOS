@@ -33,8 +33,8 @@ import EmailDomain
 import EmailDomainInterface
 import FAQDomain
 import FAQDomainInterface
-import FindPasswordFeature
-import FindPasswordFeatureInterface
+//import FindPasswordFeature
+//import FindPasswordFeatureInterface
 import InputActivityFeature
 import InputActivityFeatureInterface
 import InputCertificationFeature
@@ -256,9 +256,9 @@ final class AppComponent: BootstrapComponent {
         AdminWithdrawUserListComponent(parent: self)
     }
 
-    public var findPasswordFactory: any FindPasswordFactory {
-        FindPasswordComponent(parent: self)
-    }
+//    public var findPasswordFactory: any FindPasswordFactory {
+//        FindPasswordComponent(parent: self)
+//    }
 
     public var newPasswordFactory: any NewPasswordFactory {
         NewPasswordComponent(parent: self)

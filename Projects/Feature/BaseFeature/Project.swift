@@ -12,7 +12,8 @@ let project = Project.module(
                 .userInterface(target: .DesignSystem),
                 .shared(target: .GlobalThirdPartyLibrary),
                 .shared(target: .UtilityModule),
-                .shared(target: .DateUtil)
+                .shared(target: .DateUtil),
+                .SPM.Needle
             ]
         ),
         .tests(module: .feature(.BaseFeature), dependencies: [

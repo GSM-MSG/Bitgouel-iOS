@@ -1,5 +1,5 @@
 import BaseFeature
-import FindPasswordFeatureInterface
+//import FindPasswordFeatureInterface
 import LoginFeatureInterface
 import MainTabFeatureInterface
 import SuccessSignupFeatureInterface
@@ -9,18 +9,18 @@ struct RootView: View {
     @EnvironmentObject var sceneState: SceneState
     private let loginFactory: any LoginFactory
     private let mainTabFactory: any MainTabFactory
-    private let findPasswordFactory: any FindPasswordFactory
+//    private let findPasswordFactory: any FindPasswordFactory
     private let successSignUpFactory: any SuccessSignUpFactory
 
     public init(
         loginFactory: any LoginFactory,
         mainTabFactory: any MainTabFactory,
-        findPasswordFactory: any FindPasswordFactory,
+//        findPasswordFactory: any FindPasswordFactory,
         successSignUpFactory: any SuccessSignUpFactory
     ) {
         self.loginFactory = loginFactory
         self.mainTabFactory = mainTabFactory
-        self.findPasswordFactory = findPasswordFactory
+//        self.findPasswordFactory = findPasswordFactory
         self.successSignUpFactory = successSignUpFactory
     }
 
@@ -37,10 +37,10 @@ struct RootView: View {
                     .eraseToAnyView()
                     .environmentObject(sceneState)
 
-            case .findPassword:
-                findPasswordFactory.makeView()
-                    .eraseToAnyView()
-                    .environmentObject(sceneState)
+//            case .findPassword:
+//                findPasswordFactory.makeView()
+//                    .eraseToAnyView()
+//                    .environmentObject(sceneState)
 
             case .signup:
                 successSignUpFactory.makeView()

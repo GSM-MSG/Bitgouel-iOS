@@ -14,3 +14,6 @@ reset:
 	tuist clean
 	rm -rf **/*.xcodeproj
 	rm -rf *.xcworkspace
+
+module:
+	swift Scripts/GenerateModule.swift
